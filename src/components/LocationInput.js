@@ -1,6 +1,10 @@
 import React from "react";
 import { View } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import Constants from "expo-constants";
+import { googleApiKey } from "../../secrets";
+
+const apiKey = Constants.manifest.extra?.googleApiKey || googleApiKey;
 
 function LocationInput({ onLocationSelect }) {
   // Function to handle location selection
@@ -39,7 +43,7 @@ function LocationInput({ onLocationSelect }) {
         onPress={(data, details) => handleLocationSelect(data, details)}
         fetchDetails={true}
         query={{
-          key: "AIzaSyCAe1LFhjjHABCh3fJUKm2vtkChOegsx6E",
+          key: apiKey,
           language: "en",
         }}
       />
