@@ -26,10 +26,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View>
-        {/* Render the LocationInput component and pass the selection handler */}
-        <LocationInput onLocationSelect={handleLocationSelect} />
-      </View>
+      <LocationInput />
 
       {/* Render the MapView with the user's location */}
       {userLocation && (
@@ -62,6 +59,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingVertical: 12,
   },
   map: {
     flex: 1,

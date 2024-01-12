@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useUserLocation } from "./UserLocationContext";
-import { googleApiKey } from "../../secrets";
-
-const apiKey = googleApiKey;
 
 const ParkingDetailsScreen = ({ route }) => {
   const { selectedLocation } = route.params; // Get the selectedLocation from the route parameters
@@ -23,7 +20,7 @@ const ParkingDetailsScreen = ({ route }) => {
     navigation.navigate("Directions", {
       origin: userLocation, // User's location
       destination: destinationCoord, // Destination coordinates
-      apiKey: apiKey, // Google Maps API key
+      apiKey: "AIzaSyCAe1LFhjjHABCh3fJUKm2vtkChOegsx6E", // Google Maps API key
     });
   };
 
